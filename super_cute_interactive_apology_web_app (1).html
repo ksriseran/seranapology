@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>For My Dearest Jaanu 🥺❤️</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            fredoka: ['Fredoka', 'sans-serif'],
+            quicksand: ['Quicksand', 'sans-serif'],
+          },
+          colors: {
+            pastelPink: '#FFD1DC',
+            pastelRose: '#FFB7B2',
+            pastelLavender: '#E8DFF5',
+            pastelYellow: '#FCF6BD',
+            pastelMint: '#D0F4DE',
+          },
+          animation: {
+            'float-slow': 'float 5s ease-in-out infinite',
+            'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
+            'wiggle': 'wiggle 1s ease-in-out infinite',
+            'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-12px) rotate(2deg)' },
+            },
+            bounceGentle: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-6px)' },
+            },
+            wiggle: {
+              '0%, 100%': { transform: 'rotate(-4deg)' },
+              '50%': { transform: 'rotate(4deg)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(180deg, #FFF0F3 0%, #FFE4E8 50%, #FFF5F7 100%);
+      min-height: 100vh;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Floating heart particles */
+    .particle {
+      position: absolute;
+      pointer-events: none;
+      animation: floatUp 8s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.6) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.1) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #FFB7B2;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="relative text-gray-800 antialiased pb-12 overflow-x-hidden">
+  
+  <!-- Background Particles Container -->
+  <div id="particles-container" class="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
+
+  <!-- Main Container -->
+  <main class="relative z-10 max-w-md mx-auto px-4 py-6 sm:py-10 space-y-6">
+
+    <!-- Hero Apology Card -->
+    <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-xl border-4 border-white text-center relative overflow-hidden">
+      
+      <!-- Animated Cute Bear Illustration -->
+      <div class="relative inline-block mb-3">
+        <div class="w-28 h-28 sm:w-36 sm:h-36 mx-auto rounded-full bg-pink-100 flex items-center justify-center shadow-inner relative border-4 border-pink-200 animate-float-slow">
+          <svg class="w-20 h-20 sm:w-28 sm:h-28 text-pink-500" viewBox="0 0 100 100">
+            <circle cx="28" cy="28" r="12" fill="#FFAAA6" />
+            <circle cx="28" cy="28" r="6" fill="#FF8B94" />
+            <circle cx="72" cy="28" r="12" fill="#FFAAA6" />
+            <circle cx="72" cy="28" r="6" fill="#FF8B94" />
+            <circle cx="50" cy="50" r="32" fill="#FFD3B6" />
+            <ellipse cx="50" cy="58" rx="14" ry="10" fill="#FFFFFF" />
+            <ellipse cx="50" cy="54" rx="5" ry="3" fill="#6C5B7B" />
+            <ellipse cx="38" cy="46" rx="3" ry="5" fill="#6C5B7B" />
+            <ellipse cx="62" cy="46" rx="3" ry="5" fill="#6C5B7B" />
+            <circle cx="36" cy="44" r="1" fill="#FFFFFF" />
+            <circle cx="60" cy="44" r="1" fill="#FFFFFF" />
+            <ellipse cx="32" cy="54" rx="5" ry="3" fill="#FF8B94" opacity="0.6" />
+            <ellipse cx="68" cy="54" rx="5" ry="3" fill="#FF8B94" opacity="0.6" />
+            <path d="M 46 62 Q 50 59 54 62" stroke="#6C5B7B" stroke-width="2" fill="none" stroke-linecap="round" />
+          </svg>
+        </div>
+        <span class="absolute -bottom-1 -right-1 bg-white px-3 py-1 rounded-full text-xs font-bold text-pink-500 border border-pink-200 shadow-sm animate-wiggle">
+          So sorry! 🥺
+        </span>
+      </div>
+
+      <!-- Greeting for Jaanu -->
+      <h1 class="font-fredoka text-3xl sm:text-4xl font-bold text-gray-800 mb-2 tracking-tight">
+        Hey <span class="text-pink-500 underline decoration-wavy decoration-pink-300">Jaanu</span>... 🥺❤️
+      </h1>
+      <p class="text-sm sm:text-base text-gray-600 max-w-sm mx-auto font-medium leading-relaxed mb-6">
+        I made a mistake, and my heart has been feeling so heavy ever since. You mean the world to me and I want to make things right! ✨
+      </p>
+
+      <!-- Interactive Action Buttons -->
+      <div class="flex flex-col gap-3 relative min-h-[110px] items-center justify-center" id="action-buttons-area">
+        <!-- Forgive Button (No Heart Emoji) -->
+        <button onclick="triggerForgiveness()" class="w-full py-4 bg-gradient-to-r from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500 text-white font-fredoka text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 group">
+          <span>I Forgive You, Seran</span>
+        </button>
+
+        <!-- Slippery Mobile Dodging Button -->
+        <button id="runaway-btn" onmouseover="dodgeButton()" onclick="handleStillMadClick()" class="w-full py-3 bg-gray-100 hover:bg-gray-200 text-gray-600 font-fredoka text-sm rounded-2xl shadow-sm transition-all">
+          No, Still Mad 😤
+        </button>
+      </div>
+      <p id="dodged-hint" class="text-xs text-pink-400 font-semibold mt-2 hidden animate-pulse">
+        (Psst... this button is a bit slippery! 😉)
+      </p>
+    </div>
+
+    <!-- Peace Offerings Section -->
+    <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 shadow-xl border-4 border-white">
+      <div class="text-center mb-5">
+        <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Peace Offerings 🎁</span>
+        <h2 class="font-fredoka text-2xl font-bold text-gray-800 mt-2">Pick Your Treats, Jaanu!</h2>
+        <p class="text-xs text-gray-500 mt-1">Tap whatever treats I should bring to make you smile!</p>
+      </div>
+
+      <!-- Offerings Grid -->
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Fresh Flowers -->
+        <div onclick="toggleOffering('Fresh Flowers 🌸', this)" class="offering-card bg-pink-50/70 hover:bg-pink-100/80 border-2 border-pink-200 rounded-2xl p-4 text-center cursor-pointer transition-all duration-300 transform hover:-translate-y-1 active:scale-95 flex flex-col items-center justify-center gap-2 relative">
+          <div class="text-4xl">🌸</div>
+          <div class="font-fredoka text-sm font-bold text-gray-800">Fresh Flowers</div>
+          <div class="text-[11px] text-pink-500 font-semibold">Bouquet of Joy</div>
+        </div>
+
+        <!-- Dairy Milk -->
+        <div onclick="toggleOffering('Dairy Milk 🍫', this)" class="offering-card bg-purple-50/70 hover:bg-purple-100/80 border-2 border-purple-200 rounded-2xl p-4 text-center cursor-pointer transition-all duration-300 transform hover:-translate-y-1 active:scale-95 flex flex-col items-center justify-center gap-2 relative">
+          <div class="text-4xl">🍫</div>
+          <div class="font-fredoka text-sm font-bold text-gray-800">Dairy Milk</div>
+          <div class="text-[11px] text-purple-500 font-semibold">Silk & Creamy</div>
+        </div>
+
+        <!-- KitKat -->
+        <div onclick="toggleOffering('KitKat 🍫', this)" class="offering-card bg-red-50/70 hover:bg-red-100/80 border-2 border-red-200 rounded-2xl p-4 text-center cursor-pointer transition-all duration-300 transform hover:-translate-y-1 active:scale-95 flex flex-col items-center justify-center gap-2 relative">
+          <div class="text-4xl">🍫</div>
+          <div class="font-fredoka text-sm font-bold text-gray-800">KitKat</div>
+          <div class="text-[11px] text-red-500 font-semibold">Have a Break!</div>
+        </div>
+
+        <!-- Munch -->
+        <div onclick="toggleOffering('Munch 🍫', this)" class="offering-card bg-yellow-50/70 hover:bg-yellow-100/80 border-2 border-yellow-200 rounded-2xl p-4 text-center cursor-pointer transition-all duration-300 transform hover:-translate-y-1 active:scale-95 flex flex-col items-center justify-center gap-2 relative">
+          <div class="text-4xl">🍫</div>
+          <div class="font-fredoka text-sm font-bold text-gray-800">Munch</div>
+          <div class="text-[11px] text-amber-600 font-semibold">Crunchy Delight</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reply & Email Form -->
+    <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 shadow-xl border-4 border-white">
+      <div class="text-center mb-4">
+        <h3 class="font-fredoka text-xl font-bold text-gray-800">Send Me A Message, Jaanu! 💌</h3>
+        <p class="text-xs text-gray-500 mt-1">Write your message and it will be sent straight to my email!</p>
+      </div>
+
+      <form id="apology-reply-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+        <div>
+          <textarea id="response-text" rows="3" placeholder="Type your sweet reply here..." class="w-full p-4 bg-pink-50/50 border-2 border-pink-200 rounded-2xl text-sm focus:outline-none focus:border-pink-400 focus:bg-white transition-all resize-none" required></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-fredoka font-bold rounded-2xl shadow-md transition-all transform active:scale-95 flex items-center justify-center gap-2">
+          <span>Send Reply to Seran 🚀</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center text-xs text-pink-400 font-semibold py-2">
+      Made with extra love & endless apologies for Jaanu ❤️
+    </div>
+
+  </main>
+
+  <!-- Celebration Modal -->
+  <div id="celebration-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-xs w-full text-center shadow-2xl border-4 border-pink-200 transform animate-bounce-gentle relative overflow-hidden">
+      <div class="text-6xl mb-3">🎉 🥳 ✨</div>
+      <h3 class="font-fredoka text-2xl font-bold text-pink-500 mb-2">
+        Yay, Sweetesttt Jaanu! 🎉🥰
+      </h3>
+      <p class="text-gray-700 font-medium text-sm mb-6 leading-relaxed">
+        Thank you so much for forgiving me! You are literally the cutest and sweetest person ever! Hugs coming your way! 🤗✨
+      </p>
+      <button onclick="closeCelebrationModal()" class="w-full py-3 bg-pink-500 hover:bg-pink-600 text-white font-fredoka font-bold rounded-xl shadow-md transition-all active:scale-95">
+        Best Friends Forever! 💖
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-gray-800/90 text-white px-4 py-2.5 rounded-full shadow-xl z-50 hidden flex items-center gap-2 border border-gray-700 font-medium text-xs whitespace-nowrap">
+    <span id="toast-icon">✨</span>
+    <span id="toast-message">Notification</span>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // FormSubmit secure token linked to sriseran8@gmail.com
+    const formSubmitEndpoint = "https://formsubmit.co/ajax/1b4b0af9b4d3fb633bee6a2390b93ea9";
+
+    // Floating particles generator
+    function createParticles() {
+      let container = document.getElementById('particles-container');
+      if (!container) {
+        container = document.createElement('div');
+        container.id = 'particles-container';
+        container.className = 'fixed inset-0 pointer-events-none overflow-hidden z-0';
+        document.body.prepend(container);
+      }
+
+      const particleTypes = ['💖', '🌸', '✨', '🍫', '🌹', '❤️'];
+      
+      for (let i = 0; i < 16; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.innerText = particleTypes[Math.floor(Math.random() * particleTypes.length)];
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.animationDuration = `${5 + Math.random() * 6}s`;
+        particle.style.animationDelay = `${Math.random() * 4}s`;
+        particle.style.fontSize = `${12 + Math.random() * 14}px`;
+        container.appendChild(particle);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', createParticles);
+    } else {
+      createParticles();
+    }
+
+    // Runaway "Still Mad" Button Logic
+    let dodgeCount = 0;
+    const stillMadMessages = [
+      "Are you sure, Jaanu? 🥺",
+      "Pretty please? 🌸",
+      "I'll buy you Dairy Milk! 🍫",
+      "Look at my sad eyes! 🧸",
+      "I promise KitKat & Munch! 🍫",
+      "Don't stay mad! 💔"
+    ];
+
+    function dodgeButton() {
+      const btn = document.getElementById('runaway-btn');
+      const hint = document.getElementById('dodged-hint');
+      
+      const x = (Math.random() - 0.5) * 180;
+      const y = (Math.random() - 0.5) * 80;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+
+      dodgeCount++;
+      if (dodgeCount > 1) {
+        btn.innerText = stillMadMessages[(dodgeCount - 1) % stillMadMessages.length];
+        hint.classList.remove('hidden');
+      }
+    }
+
+    function handleStillMadClick() {
+      showToast("Nice try Jaanu, but you can't click this easily! 😜", "😜");
+      dodgeButton();
+    }
+
+    // Forgiveness Celebration Trigger
+    function triggerForgiveness() {
+      const duration = 2.5 * 1000;
+      const animationEnd = Date.now() + duration;
+
+      const interval = setInterval(function() {
+        const timeLeft = animationEnd - Date.now();
+        if (timeLeft <= 0) return clearInterval(interval);
+
+        confetti({
+          particleCount: 40,
+          startVelocity: 25,
+          spread: 360,
+          origin: { x: Math.random(), y: Math.random() - 0.2 },
+          colors: ['#FFB7B2', '#FFD1DC', '#E8DFF5', '#FCF6BD', '#FF6B8B']
+        });
+      }, 200);
+
+      document.getElementById('celebration-modal').classList.remove('hidden');
+    }
+
+    function closeCelebrationModal() {
+      document.getElementById('celebration-modal').classList.add('hidden');
+    }
+
+    // Selected Offerings Tracker
+    const selectedOfferings = new Set();
+
+    function toggleOffering(offeringName, element) {
+      if (selectedOfferings.has(offeringName)) {
+        selectedOfferings.delete(offeringName);
+        element.classList.remove('ring-4', 'ring-pink-400', 'scale-105');
+        showToast(`Deselected: ${offeringName}`, "🗑️");
+      } else {
+        selectedOfferings.add(offeringName);
+        element.classList.add('ring-4', 'ring-pink-400', 'scale-105');
+        confetti({ particleCount: 20, spread: 50, origin: { y: 0.8 } });
+        showToast(`Selected: ${offeringName}! ✨`, "🎁");
+      }
+    }
+
+    // Form Response Handling
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+      const message = document.getElementById('response-text').value;
+      const offeringsArray = Array.from(selectedOfferings);
+      
+      const emailBody = `Jaanu's Apology Response 💌:\n\n` +
+                        `Selected Treats: ${offeringsArray.length > 0 ? offeringsArray.join(', ') : 'None'}\n\n` +
+                        `Message: ${message}`;
+
+      showToast("Sending your reply to Seran... 🚀", "💌");
+
+      // Send response to sriseran8@gmail.com via FormSubmit AJAX service
+      try {
+        const response = await fetch(formSubmitEndpoint, {
+          method: "POST",
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: "Jaanu 💖",
+            message: message,
+            selected_treats: offeringsArray.length > 0 ? offeringsArray.join(', ') : 'None',
+            _subject: "Jaanu replied to your apology! ❤️"
+          })
+        });
+
+        if (response.ok) {
+          confetti({ particleCount: 50, spread: 80, origin: { y: 0.6 } });
+          showToast("Response sent directly to Seran! Thank you Jaanu ❤️", "💌");
+          document.getElementById('apology-reply-form').reset();
+          return;
+        }
+      } catch (err) {
+        console.error("Direct delivery failed, opening mail client...", err);
+      }
+
+      // Fallback mail client trigger
+      const mailtoUrl = `mailto:sriseran8@gmail.com?subject=${encodeURIComponent("Jaanu replied to your apology! ❤️")}&body=${encodeURIComponent(emailBody)}`;
+      window.location.href = mailtoUrl;
+
+      confetti({ particleCount: 50, spread: 80, origin: { y: 0.6 } });
+      showToast("Response prepared! Thank you Jaanu ❤️", "💌");
+      document.getElementById('apology-reply-form').reset();
+    }
+
+    // Toast Utility
+    function showToast(message, icon = "✨") {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-message').innerText = message;
+      document.getElementById('toast-icon').innerText = icon;
+      
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
